@@ -1,0 +1,120 @@
+body {
+    background-color: lightskyblue;
+}
+
+
+/* Home Styles ------------------------------------------------------------------ */
+
+.wrapped {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.homelinks {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+    margin: 0 1em;
+}
+
+#home-wrapped {
+    padding-top: 4em;
+}
+
+
+/* Gallery Styles ------------------------------------------------------------------ */
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:1em;
+    grid-row-gap: 1em;
+}
+
+.galtainer {
+    margin: 5em;
+    position: relative;
+}
+
+
+.wrapgal {
+    margin-bottom: 3em;
+}
+
+
+
+/* Footer Styles ------------------------------------------------------------------ */
+
+footer {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2em;
+}
+
+footer a {
+    margin: 0em .5em;
+}
+
+
+
+
+
+
+
+
+/* Flexbox Code ------------------------------------------------------------------ */
+/*#main{*/
+    /*height: 100%;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+/*}*/
+
+/*.wrapped {*/
+    /*flex: 1;*/
+    /*width: 60%;*/
+    /*margin: 0 auto;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+/*}*/
+
+/*.galleries {*/
+    /*flex: 1;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+/*}*/
+
+/*.homelinks {*/
+    /*display: flex;*/
+    /*list-style-type: none;*/
+    /*margin: 0em 2em;*/
+/*}*/
+
+/*.homethumb {*/
+    /*flex: 1 1 33%;*/
+    /*margin: .25em;*/
+/*}*/
+
+/* Flexbox Gallery Styles ------------------------------------------------------------------ */
+
+/*.gallery {*/
+    /*flex: 4;*/
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+/*}*/
+
+/*.gallery li {*/
+    /*flex: 1 33%;*/
+/*}*/
+
+/*.galtainer {*/
+    /*margin: 5em;*/
+    /*position: relative;*/
+/*}*/
+
+
+/*.wrapgal {*/
+    /*margin-bottom: 3em;*/
+/*}*/
