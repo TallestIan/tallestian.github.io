@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 4</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 350px;
+        height: 350px;
+        border:5px solid black;
+        margin:0 auto;
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:95%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+    <script>
+    // I used Two functions here.  Starter idea at: 
+    // https://codepen.io/ColleenEMc/pen/XmZzWw
+
+    function switcher(x){
+        var image = document.getElementById("image");
+        var imgTemp = x.src;
+        var textTemp = x.alt;
+        image.style.backgroundImage = "url(" + imgTemp + ")";
+        image.innerHTML = textTemp;
+    }
+
+    function unswitcher(y){
+        var image = document.getElementById("image");
+        image.style.backgroundImage = "";
+        image.innerHTML = "Hover or tab over/into an image below.";
+    }
+
+    </script>
+</head>
+
+<body>
+    <h1>Challenge 4</h1>
+        <div id = "image" tabindex="4">
+            Hover or tab over/into an image below.
+        </div>
+
+        <img class = "preview" 
+             alt = "Light Painting"
+             src = "images/1.jpg"
+             onmouseover = "switcher(this)" onmouseleave = "unswitcher()"
+             onfocus = "switcher(this)" onblur = "unswitcher()"
+             tabindex="1">
+
+        <img class = "preview" 
+            alt = "Sunrise"
+            src = "images/2.jpg"
+             onmouseover = "switcher(this)" onmouseleave = "unswitcher()"
+             onfocus = "switcher(this)" onblur = "unswitcher()"
+             tabindex="2">
+
+        <img class = "preview"
+            src = "images/3.jpg"
+            alt = "Tail Light"
+             onmouseover = "switcher(this)" onmouseleave = "unswitcher()"
+             onfocus = "switcher(this)" onblur = "unswitcher()"
+             tabindex="3">
+
+        <img class = "preview"
+             alt = "Curve Apex"
+             src = "images/4.jpg"
+             onmouseover = "switcher(this)" onmouseleave = "unswitcher()"
+             onfocus = "switcher(this)" onblur = "unswitcher()"
+             tabindex="4">
+
+        <img class = "preview"
+             alt = "Field Sunrise"
+             src = "images/5.jpg"
+             onmouseover = "switcher(this)" onmouseleave = "unswitcher()"
+             onfocus = "switcher(this)" onblur = "unswitcher()"
+             tabindex="5">
+
+        <img class = "preview"
+             src = "images/6.jpg"
+             alt = "Tunnel of Trees"
+             onmouseover = "switcher(this)" onmouseleave = "unswitcher()"
+             onfocus = "switcher(this)" onblur = "unswitcher()"
+             tabindex="6">
+</body>
+</html>
+    

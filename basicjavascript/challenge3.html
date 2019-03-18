@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <title>Challenge 3</title>
+
+    <style>
+
+    .errorMsg {
+        font-family: 'Anton', sans-serif;
+      color:red;
+      display:none; }
+    </style>
+    
+    <script>
+
+
+
+        var nameEntry = document.getElementById("name");
+        var addrEntry = document.getElementById("addr");
+
+        function checkForm(){
+            var nameErrorVar = document.getElementById("nameError");
+            var addrErrorVar = document.getElementById("addressError");
+            var nameEmpty = "";
+            var addrEmpty = "";
+
+            if(document.getElementById("addr").value.length === 0) {
+                addrErrorVar.style.display = "block";
+                nameEmpty = true;
+            } else {
+                addrErrorVar.style.display = "none";
+                nameEmpty = false;
+            }
+
+            if(document.getElementById("name").value.length === 0) {
+                nameErrorVar.style.display = "block";
+                addrEmpty = true;
+            } else {
+                nameErrorVar.style.display = "none";
+                addrEmpty = false;
+            }
+
+            if (nameEmpty === true || addrEmpty === true) {
+                alert("This didn't work");
+                return false;
+            }
+
+
+
+
+            // } else {
+            //     return true;
+            // }
+
+        }
+
+        // Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
+        // var nameErrorVar = document.getElementById("nameError");
+        // var nameEntry = document.getElementById("name");
+        // console.log(nameEntry);
+        // if (document.getElementById("name").value === "") {
+        //     nameErrorVar.style.display = "block"
+        // }
+    </script>
+</head>
+<body>
+    <h1>Challenge 3</h1>
+  <form action="challenge4.html" onsubmit="return checkForm();">
+        <fieldset>
+        <legend>Personal details</legend>
+          <label for="name">Full name: </label>
+            <input type="text" name="fullname" id="name"><br/>
+            <p class="errorMsg" id="nameError">Please enter your name above!</p>
+
+          <label for ="addr"></label>
+            Street Address:
+            <input type="text" name="addr" id="addr">
+            <p class="errorMsg" id="addressError">Please enter your street address!</p>
+        </fieldset>
+        <input type="submit" value="Submit it!" >
+    </form>
+</body>
+</html>

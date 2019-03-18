@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+Step 5: Toggling the Home Address
+Now when you test your form, you'll notice that when you un-check your checkbox, the home address field isn't enabled.
+Add an if-else statement to your setHomeAddress() function so that when the checkbox is un-checked the Home address field is reset to empty and enabled again.-->
+
+	<meta charset="UTF-8">
+	<title>Challenge Two</title>
+    
+    <script>
+	   function setHomeAddress(){
+           console.log("Aye, this works.");
+           var textGrab = document.getElementById("bill").value;
+           console.log(textGrab);
+           document.getElementById("home").value = textGrab;
+           document.getElementById("home").disabled = true;
+           if (document.getElementById("useBilling").checked === false){
+               document.getElementById("home").value = "";
+               document.getElementById("home").disabled = false;
+           }
+	   }
+    </script>
+</head>
+<body>
+    <h1>Challenge Two</h1>
+    <!-- UPDATE THE ACTION -->
+    <form action="challenge3.html">
+      <fieldset>
+        <legend>Billing Information</legend>
+        <div>
+          <label for ="billing">Billing Address:</label><br>
+          <textarea name="billAdd" id="bill"></textarea>
+        </div>
+
+        <div>
+          <label for ="home">Home Address:</label><br>
+          <input type="checkbox" name="useBilling" onclick = "setHomeAddress()" id="useBilling"> Same as above <br>
+        <textarea name="homeAdd" id="home"></textarea>
+        </div>
+        <input type = "submit" value = "Go To Challenge 3">
+      </fieldset>
+      </form>
+</body>
+</html>
