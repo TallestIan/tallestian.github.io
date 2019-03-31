@@ -43,7 +43,6 @@
             console.log(e.pageY);
             x=e.pageX;
             y=e.pageY;
-            e.preventDefault();
             draw();
         });
 
@@ -52,7 +51,6 @@
             console.log(e.pageY);
             x=e.pageX;
             y=e.pageY;
-            e.preventDefault();
             draw();
         });
 
@@ -61,7 +59,6 @@
             console.log(e.pageY);
             x=e.pageX;
             y=e.pageY;
-            e.preventDefault();
             draw();
         });
 
@@ -90,6 +87,23 @@
         colorPicked.addEventListener("change", function() {
             return color = colorPicked.value;
         });
+
+        // Prevent scrolling when touching the canvas
+        document.body.addEventListener("touchstart", function (e) {
+            if (e.target === c) {
+                e.preventDefault();
+            }
+        }, false);
+        document.body.addEventListener("touchend", function (e) {
+            if (e.target === c) {
+                e.preventDefault();
+            }
+        }, false);
+        document.body.addEventListener("touchmove", function (e) {
+            if (e.target === c) {
+                e.preventDefault();
+            }
+        }, false);
 
 
     </script>
