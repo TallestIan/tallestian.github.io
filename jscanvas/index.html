@@ -5,7 +5,7 @@
     <title>Canvas Javascript</title>
     <style>
         canvas {
-            border: 1px red solid;
+            border: 1px black solid;
         }
     </style>
 </head>
@@ -20,17 +20,21 @@
     </div>
 
     <script>
-
+        /* Basic canvas code --------------------------------------- */
         var c = document.getElementById("myCanv");
         c.width = window.innerWidth * .8;
         c.height = window.innerHeight * .8;
         var ctx = c.getContext("2d");
+
+
+        /* Variables for values that will be changed --------------------------------------- */
         var color = "red";
         var x = 0;
         var y = 0;
         var radius = 20;
-        draw();
 
+
+        /* Function for drawing using circles --------------------------------------- */
         function draw(){
             ctx.beginPath();
             ctx.fillStyle = color;
@@ -38,6 +42,8 @@
             ctx.fill();
         }
 
+
+        /* Listeners for mouse drawing --------------------------------------- */
         window.addEventListener('mousemove', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
@@ -46,6 +52,8 @@
             draw();
         });
 
+
+        /* Listeners for touch drawing --------------------------------------- */
         window.addEventListener('touchstart', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
@@ -53,7 +61,6 @@
             y=e.pageY;
             draw();
         });
-
         window.addEventListener('touchmove', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
@@ -62,6 +69,7 @@
             draw();
         });
 
+        /* Listeners for keyboard inputs --------------------------------------- */
         window.addEventListener("keydown", function(k){
             var pressedKey = k.which;
             if (pressedKey === 66) {
@@ -83,24 +91,27 @@
             }
         });
 
+
+        /* Listener for color picker change --------------------------------------- */
         var colorPicked = document.getElementById("picker");
         colorPicked.addEventListener("change", function() {
             return color = colorPicked.value;
         });
 
-        // Prevent scrolling when touching the canvas >
+
+        /* Fixing scrolling on mobile when drawing on the canvas --------------------------------------- */
         c.addEventListener("touchstart",  function(event) {event.preventDefault()});
         c.addEventListener("touchmove",   function(event) {event.preventDefault()});
         // c.addEventListener("touchend",    function(event) {event.preventDefault()});
         // c.addEventListener("touchcancel", function(event) {event.preventDefault()});
 
+
+        /* Listener for clearing and resizing on orientation change --------------------------------------- */
         window.addEventListener("orientationchange", function() {
             ctx.clearRect(0, 0, 10000, 10000);
             c.width = window.innerWidth * .8;
             c.height = window.innerHeight * .8;
         });
-
-
 
     </script>
 </body>
