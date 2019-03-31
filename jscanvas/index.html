@@ -38,27 +38,30 @@
             ctx.fill();
         }
 
-        c.addEventListener('mousemove', function (e) {
+        window.addEventListener('mousemove', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
             x=e.pageX;
             y=e.pageY;
+            e.preventDefault();
             draw();
         });
 
-        c.addEventListener('touchstart', function (e) {
+        window.addEventListener('touchstart', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
             x=e.pageX;
             y=e.pageY;
+            e.preventDefault();
             draw();
         });
 
-        c.addEventListener('touchmove', function (e) {
+        window.addEventListener('touchmove', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
             x=e.pageX;
             y=e.pageY;
+            e.preventDefault();
             draw();
         });
 
