@@ -38,7 +38,7 @@
             ctx.fill();
         }
 
-        window.addEventListener('mousemove', function (e) {
+        c.addEventListener('mousemove', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
             x=e.pageX;
@@ -46,7 +46,7 @@
             draw();
         });
 
-        window.addEventListener('touchstart', function (e) {
+        c.addEventListener('touchstart', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
             x=e.pageX;
@@ -54,7 +54,7 @@
             draw();
         });
 
-        window.addEventListener('touchmove', function (e) {
+        c.addEventListener('touchmove', function (e) {
             console.log(e.pageX);
             console.log(e.pageY);
             x=e.pageX;
@@ -88,22 +88,6 @@
             return color = colorPicked.value;
         });
 
-        // Prevent scrolling when touching the canvas
-        document.body.addEventListener("touchstart", function (e) {
-            if (e.target == canvas) {
-                e.preventDefault();
-            }
-        }, false);
-        document.body.addEventListener("touchend", function (e) {
-            if (e.target == canvas) {
-                e.preventDefault();
-            }
-        }, false);
-        document.body.addEventListener("touchmove", function (e) {
-            if (e.target == canvas) {
-                e.preventDefault();
-            }
-        }, false);
 
     </script>
 </body>
