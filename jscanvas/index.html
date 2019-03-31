@@ -88,11 +88,16 @@
             return color = colorPicked.value;
         });
 
-        // Prevent scrolling when touching the canvas
+        // Prevent scrolling when touching the canvas >
         c.addEventListener("touchstart",  function(event) {event.preventDefault()});
         c.addEventListener("touchmove",   function(event) {event.preventDefault()});
         c.addEventListener("touchend",    function(event) {event.preventDefault()});
         c.addEventListener("touchcancel", function(event) {event.preventDefault()});
+
+        window.addEventListener("orientationchange", function() {
+            ctx.clearRect(0, 0, 10000, 10000);
+        });
+
 
 
     </script>
