@@ -1,6 +1,6 @@
-body {
-    background-color: palegreen;
-}
+/*body {*/
+    /*background-color: palegreen;*/
+/*}*/
 
 
 /* Home Styles ------------------------------------------------------------------ */
@@ -75,4 +75,23 @@ footer {
 
 footer a {
     margin: 0em .5em;
+}
+
+/* Modal Styles ------------------------------------------------------------------ */
+
+.modalizer_box {
+    margin: 30vh auto;
+    width: 80vw;
+    height: 40vh;
+    background-color: #fff;
+}
+
+.modalizer_content {
+    padding: 1.5em;
+}
+
+#modalizer p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    padding: .25em;
 }

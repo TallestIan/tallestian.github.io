@@ -15,19 +15,33 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138239682-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'UA-138239682-1');
+        gtag('config', 'UA-138239682-1');
+
+        var i = 0;
+        var txt = 'Welcome to Geiman Photo!';
+        var speed = 70;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("typer").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
     </script>
 
 </head>
 
-<body>
+<body onload="typeWriter()">
+
 <a class="skipper" href="#main">Skip to Content</a>
-    <header>
-        <nav class = "marginal">
+    <header id="navbar">
+        <nav class = "navstyle">
             <ul>
                 <li><a href="index.html" class="selected">Home</a></li>
                 <li><a href="gallery_auto.html">Auto</a></li>
@@ -39,21 +53,14 @@
         </nav>
     </header>
     <div class="maintainer">
-
-
         <div class="backer"></div>
-
-
         <main id="main" tabindex="-1">
-
-
             <div class="wrapped" id="home-wrapped">
                 <div>
                     <img src="images/geiman-photography-logo-dark.png" alt = "geiman photo logo"/>
                 </div>
-                <h1>Welcome to Geiman Photo!</h1>
-                <p>Photography is about stories - I work in automotive, engagement/wedding, and travel photography to tell them all.</p>
-
+                <h1 id="typer"></h1>
+                <p >'Photography is about stories - I work in automotive, engagement/wedding, and travel photography to tell them all.'</p>
             </div>
             <div class="galleries">
                 <p>Choose a gallery to view my work.</p>
@@ -66,8 +73,6 @@
                 </ul>
             </div>
         </main>
-
-
     </div>
     <footer>
         <a aria-label="Portfolio Website" href="https://iangeiman.com/" target="blank"><i class="far fa-file-alt"></i></a>

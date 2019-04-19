@@ -12,12 +12,70 @@
     <link rel='stylesheet' media='screen and (min-width: 992px)' href='css/desktop.css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:500" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138239682-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138239682-1');
+    </script>
+
 </head>
 
 <body>
+
+<script>
+    function checkForm() {
+        var nameErrorVar = document.getElementById("nameLabel");
+        var emailErrorVar = document.getElementById("emailLabel");
+        var messageErrorVar = document.getElementById("messageLabel");
+        var nameEmpty = "";
+        var emailEmpty = "";
+        var messageEmpty = "";
+
+        if (document.getElementById("name").value.length === 0) {
+            nameErrorVar.innerHTML = "Please Enter Your Name";
+            nameErrorVar.style.color = "red";
+            nameEmpty = true;
+        } else {
+            nameErrorVar.innerHTML = "Name";
+            nameErrorVar.style.color = "#000";
+            nameEmpty = false;
+        }
+
+        if (document.getElementById("email").value.length === 0) {
+            emailErrorVar.innerHTML = "Please Enter Your Email";
+            emailErrorVar.style.color = "red";
+            emailEmpty = true;
+        } else {
+            emailErrorVar.innerHTML = "Email";
+            emailErrorVar.style.color = "#000";
+            emailEmpty = false;
+        }
+
+        if (document.getElementById("message").value.length === 0) {
+            messageErrorVar.innerHTML = "Please Enter Your Message";
+            messageErrorVar.style.color = "red";
+            messageEmpty = true;
+        } else {
+            messageErrorVar.innerHTML = "Message";
+            messageErrorVar.style.color = "#000";
+            messageEmpty = false;
+        }
+
+        if (nameEmpty === true || emailEmpty === true || messageEmpty === true) {
+            document.getElementById("callme").style.display = "inline-block";
+            return false;
+        }
+
+    }
+</script>
+
 <a class="skipper" href="#main">Skip to Content</a>
-<header>
-    <nav class = "marginal">
+<header id="navbar">
+    <nav class = "navstyle">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery_auto.html">Auto</a></li>
@@ -37,12 +95,35 @@
         <h1>Contact Me</h1>
         <p>Use this form to reach out to me about potential projects or questions.</p>
 
-        <form>
-            <label for="name">Name</label>
-            <input type="text" name="name" value="Bilbo Baggins" id="name"><br>
-            <label for="message">Message</label>
-            <input type="text" name="message" value="Type Here" id="message"><br>
-            <input type="submit" value="Submit">
+        <div class="callout" id="callme">
+            <div class="callout-header">Alert!</div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <div class="callout-container">
+                <p>Please fix the errors in the form.</p>
+            </div>
+        </div>
+
+        <form onsubmit="return checkForm();">
+            <fieldset class="contact_form">
+            <label id="nameLabel" for="name">
+                Name
+            </label>
+            <input type="text" name="name" placeholder="Bilbo Baggins" id="name">
+
+            <label id="emailLabel" for="email">
+                Email
+            </label>
+            <input type="email" name="email" placeholder="bilbo.baggins@bagend.com" id="email">
+
+
+            <label id="messageLabel" for="message">
+                Message
+            </label>
+            <input type="text" name="message" placeholder="Message Here" id="message">
+            </fieldset>
+            <fieldset class="submit_form">
+            <input class="btn" type="submit" placeholder="Submit">
+            </fieldset>
         </form>
     </div>
 </main>

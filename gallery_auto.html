@@ -12,12 +12,23 @@
     <link rel='stylesheet' media='screen and (min-width: 992px)' href='css/desktop.css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:500" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138239682-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138239682-1');
+    </script>
+
 </head>
 
 <body>
 <a class="skipper" href="#main">Skip to Content</a>
-<header>
-    <nav class = "marginal">
+<header id="navbar">
+    <nav class = "navstyle">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery_auto.html" class="selected">Auto</a></li>
@@ -35,15 +46,15 @@
         <p>Car enthusiasts put a lot of time and love into their vehicles. Capturing that passion tells a story of their commitment to racing, travel, and the road.</p>
     </div>
     <ul class = "gallery">
-        <li><img src="images/auto_web1.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web2.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web3.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web4.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web5.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web6.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web7.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web8.jpg" alt = "" class="thumb"/></li>
-        <li><img src="images/auto_web9.jpg" alt = "" class="thumb"/></li>
+        <li><a href="images/auto_web1.jpg" data-lightbox="Automotive Gallery" data-title="Audi SQ5" data-alt = "Audi SQ5"> <img src="images/auto_web1.jpg" alt = "Audi SQ5" class="thumb"/></a></li>
+        <li><a href="images/auto_web2.jpg" data-lightbox="Automotive Gallery" data-title="Lotus Elise" data-alt = "Lotus Elise"> <img src="images/auto_web2.jpg" alt = "Lotus Elise" class="thumb"/></a></li>
+        <li><a href="images/auto_web3.jpg" data-lightbox="Automotive Gallery" data-title="Triumph Motorcycle" data-alt = "Triumph Motorcycle"> <img src="images/auto_web3.jpg" alt = "Triumph Motorcycle" class="thumb"/></a></li>
+        <li><a href="images/auto_web4.jpg" data-lightbox="Automotive Gallery" data-title="BMW E36 " data-alt = "BMW E36"> <img src="images/auto_web4.jpg" alt = "BMW E36" class="thumb"/></a></li>
+        <li><a href="images/auto_web5.jpg" data-lightbox="Automotive Gallery" data-title="BMW M2002" data-alt = "BMW M2002"> <img src="images/auto_web5.jpg" alt = "BMW M2002" class="thumb"/></a></li>
+        <li><a href="images/auto_web6.jpg" data-lightbox="Automotive Gallery" data-title="Ford Mustang Sunrise" data-alt = "Ford Mustang Sunrise" > <img src="images/auto_web6.jpg" alt = "Ford Mustang Sunrise" class="thumb"/></a></li>
+        <li><a href="images/auto_web7.jpg" data-lightbox="Automotive Gallery" data-title="Ford Mustang Light Painting" data-alt = "Ford Mustang Light Painting"> <img src="images/auto_web7.jpg" alt = "Ford Mustang Light Painting" class="thumb"/></a></li>
+        <li><a href="images/auto_web8.jpg" data-lightbox="Automotive Gallery" data-title="Porsche 911" data-alt = "Porsche 911"> <img src="images/auto_web8.jpg" alt = "Porsche 911" class="thumb"/></a></li>
+        <li><a href="images/auto_web9.jpg" data-lightbox="Automotive Gallery" data-title="Chevrolet Camaro" data-alt = "Chevrolet Camaro" > <img src="images/auto_web9.jpg" alt = "Chevrolet Camaro" class="thumb"/></a></li>
     </ul>
 </main>
 </div>
@@ -52,5 +63,28 @@
     <a aria-label="LinkedIn" href="https://www.linkedin.com/in/ian-geiman/" target="blank"><i class="fab fa-linkedin"></i></a>
     <a aria-label="Instagram" href="https://www.instagram.com/geimanphotography" target="blank"><i class="fab fa-instagram"></i></a>
 </footer>
+
+<script src="js/lightbox-plus-jquery.js"></script>
+
+<script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
+
+    // Get the navbar
+    var navbar = document.getElementById("navbar");
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
+
 </body>
 </html>
