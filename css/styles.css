@@ -235,12 +235,12 @@ input {
   max-width: 20em;
   transform: translateY(100%);
   display: none;
-  border: 1px solid #000;
+  border: 3px solid red;
 }
 
 .callout-header {
   padding: 25px 15px;
-  background: red;
+  background: black;
   font-size: 2em;
   color: white;
 }
@@ -259,11 +259,6 @@ input {
   font-size: 30px;
   cursor: pointer;
 }
-
-.closebtn:hover {
-  color: black;
-}
-
 
 
 /* Modal Styles ------------------------------------------------------------------ */
