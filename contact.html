@@ -37,31 +37,31 @@
 
         if (document.getElementById("name").value.length === 0) {
             nameErrorVar.innerHTML = "Please Enter Your Name";
-            nameErrorVar.style.color = "red";
+            document.getElementById("name").style.border = "1px solid red";
             nameEmpty = true;
         } else {
             nameErrorVar.innerHTML = "Name";
-            nameErrorVar.style.color = "#000";
+            document.getElementById("name").style.border = "1px solid black";
             nameEmpty = false;
         }
 
         if (document.getElementById("email").value.length === 0) {
             emailErrorVar.innerHTML = "Please Enter Your Email";
-            emailErrorVar.style.color = "red";
+            document.getElementById("email").style.border = "1px solid red";
             emailEmpty = true;
         } else {
             emailErrorVar.innerHTML = "Email";
-            emailErrorVar.style.color = "#000";
+            document.getElementById("email").style.border = "1px solid black";
             emailEmpty = false;
         }
 
         if (document.getElementById("message").value.length === 0) {
             messageErrorVar.innerHTML = "Please Enter Your Message";
-            messageErrorVar.style.color = "red";
+            document.getElementById("message").style.border = "1px solid red";
             messageEmpty = true;
         } else {
             messageErrorVar.innerHTML = "Message";
-            messageErrorVar.style.color = "#000";
+            document.getElementById("message").style.border = "1px solid black";
             messageEmpty = false;
         }
 
